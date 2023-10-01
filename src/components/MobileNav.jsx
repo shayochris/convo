@@ -4,6 +4,7 @@ import {HiUsers} from "react-icons/hi";
 import {MdLogout} from 'react-icons/md';
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import bgimage from '../assets/images/bgimage.jpg'
 
 export default function MobileNav({ setsearchmodal }) {
     const [mobilenav,setmobilenav]=useState(false);
@@ -20,7 +21,9 @@ export default function MobileNav({ setsearchmodal }) {
             <div className="bg-white w-[60%] h-full">
                 <div className="bg-white">
                     <div className="w-full bg-blue-600/80 text-white p-4 ">
-                        <div className="w-16 h-16 avatar"></div>
+                        <div className="w-12 h-12 avatar">
+                            <img src={bgimage} alt="" className="avatar-img" />
+                        </div>
                         <div>
                             <p className='font-semibold'>username</p>
                             <p className="text-xs">email@gmail.com</p>

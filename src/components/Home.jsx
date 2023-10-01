@@ -6,13 +6,16 @@ import {MdLogout} from 'react-icons/md';
 import Search from './Search';
 import MobileNav from './MobileNav';
 import { useState } from 'react';
+import bgimage from '../assets/images/bgimage.jpg'
 export default function Home() {
     const [searchmodal,setsearchmodal]=useState(false);
   return (
     <div className='w-full h-screen flex'>
         <div className="sidenav">
-            <div className="w-full bg-blue-700/80 p-4">
-                <div className="w-16 h-16 avatar"></div>
+            <div className="w-full bg-blue-600/80 p-4">
+                <div className="w-12 h-12 avatar">
+                    <img src={bgimage} alt="" className="avatar-img" />
+                </div>
                 <div>
                     <p className='font-semibold'>username</p>
                     <p className="text-xs">email@gmail.com</p>
@@ -50,16 +53,23 @@ export default function Home() {
                      <div key={n} className='bg-white p-2'>
                         <div className="flex">
                             <div className=''>
-                                <div className="w-12 h-12 avatar"></div>
+                                <div className="w-12 h-12 avatar">
+                                    <img src={bgimage} alt="" className="avatar-img" />
+                                </div>
                             </div>
                             
                             <div className='ml-3 w-[80%] border-b-[1px] border-gray-200 pb-1'>
                                 <div className='flex justify-between items-center'>
                                     <p className="font-semibold">username</p>
-                                    <p className='text-sm text-blue-600'>now</p>
+                                    <p className='text-xs text-gray-400'>21:35</p>
                                 </div>
-                                
-                                <p className='text-gray-600 text-sm'>  totam! Architecto non aliquam facilis.</p>
+                                <div className="flex justify-between items-center">
+                                    <p className='text-gray-600 text-sm'>  totam! Architecto non aliquam ..</p>
+                                    <div className=" px-2 bg-blue-600 rounded-full flex items-center justify-center">
+                                        <p className='text-white text-sm '>5</p>
+                                    </div>
+                                </div>
+                               
                             </div>
                         </div>  
                     </div>
