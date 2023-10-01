@@ -8,7 +8,7 @@
   @apply px-4 py-2 text-white rounded-lg
 }
 .sidenav{
-  @apply hidden sm:block sm:w-[20%] bg-white border-[1px] border-gray-300 text-white h-full
+  @apply hidden sm:block sm:w-[20%] bg-white border-r-[1px] border-gray-300 text-white h-full
 }
 .main-div{
   @apply w-full sm:w-[80%] overflow-y-scroll bg-white relative

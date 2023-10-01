@@ -4,7 +4,7 @@ import {HiUsers} from "react-icons/hi";
 import {MdLogout} from 'react-icons/md';
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import bgimage from '../assets/images/bgimage.jpg'
+import bgimage from "../../assets/images/bgimage.jpg";
 
 export default function MobileNav({ setsearchmodal }) {
     const [mobilenav,setmobilenav]=useState(false);
