@@ -29,7 +29,7 @@ export default function Chat() {
         </div>
 
         <div className="p-2 h-full overflow-y-scroll">
-        {[...Array(7)].map((n)=>(
+        {[...Array(1)].map((n)=>(
           <div key={n}>
              <div className='my-3 flex justify-start text-sm '>
             <div className='max-w-[80%] lg:max-w-[60%] ml-2'>
