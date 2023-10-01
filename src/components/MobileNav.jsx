@@ -8,18 +8,18 @@ import { useState } from "react";
 export default function MobileNav({ setsearchmodal }) {
     const [mobilenav,setmobilenav]=useState(false);
   return (
-    <div className='bg-white p-2 flex justify-between items-center 
+    <div className='bg-white px-4 py-2 flex justify-between items-center 
     md:hidden border-b-[1px] border-gray-300 sticky top-0 left-0'>
-        <p className='text-blue-700/80 font-semibold text-xl'>convo</p>
+        <p className='text-blue-700/80 font-semibold text-2xl'>convo</p>
         <div className="flex items-center text-blue-700/80">
-            <AiOutlineSearch onClick={()=>setsearchmodal(true)} className='w-5 h-5 mr-2'/>
-            <AiOutlineMenu onClick={()=>setmobilenav(true)} className='w-5 h-5'/>
+            <AiOutlineSearch onClick={()=>setsearchmodal(true)} className='w-6 h-6 mr-2'/>
+            <AiOutlineMenu onClick={()=>setmobilenav(true)} className='w-6 h-6'/>
         </div>
         {mobilenav && 
         <div  className="fixed w-full h-screen top-0 left-0 z-20 flex">
-            <div className="bg-blue-600 w-[60%] h-full">
-                <div className="text-white">
-                    <div className="w-full bg-blue-700/80 p-4">
+            <div className="bg-white w-[60%] h-full">
+                <div className="bg-white">
+                    <div className="w-full bg-blue-600/80 text-white p-4 ">
                         <div className="w-16 h-16 avatar"></div>
                         <div>
                             <p className='font-semibold'>username</p>
@@ -28,16 +28,16 @@ export default function MobileNav({ setsearchmodal }) {
                     </div> 
                     <ul>
                         <li>
-                            <Link className="sidenav-link"><BsChatSquareTextFill className='mr-2 w-5 h-5'/>chats</Link>
+                            <Link className="navlink"><BsChatSquareTextFill className='mr-2 w-5 h-5 text-gray-600'/>chats</Link>
                         </li>
                         <li>
-                            <Link className="sidenav-link"><AiFillSetting className='mr-2 w-5 h-5'/>Settings</Link>
+                            <Link className="navlink"><AiFillSetting className='mr-2 w-5 h- text-gray-6005 text-gray-600'/>Settings</Link>
                         </li>
                         <li>
-                            <Link className="sidenav-link"><HiUsers className='mr-2 w-5 h-5'/>Contacts</Link>
+                            <Link className="navlink"><HiUsers className='mr-2 w-5 h-5 text-gray-600'/>Contacts</Link>
                         </li>
                         <li>
-                            <Link to="/signin" className="sidenav-link"><MdLogout className='mr-2 w-5 h-5'/>Logout</Link>
+                            <Link to="/signin" className="navlink"><MdLogout className='mr-2 w-5 h-5 text-gray-600'/>Logout</Link>
                         </li>
                     </ul>
                 </div>

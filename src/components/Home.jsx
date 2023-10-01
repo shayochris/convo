@@ -46,7 +46,7 @@ export default function Home() {
             {searchmodal &&<Search setsearchmodal={setsearchmodal} />}
             <MobileNav setsearchmodal={setsearchmodal}/>
             <div className='p-4'>
-                {[1,2,3,4,5,6,7,8,9,10].map((n)=>(
+                {[...Array(20)].map((n)=>(
                      <div key={n} className='bg-white p-2'>
                         <div className="flex">
                             <div className=''>
