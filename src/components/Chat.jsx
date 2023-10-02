@@ -40,7 +40,7 @@ export default function Chat() {
       </div>
       }
       <div className="main-div lg:shadow-lg lg:w-[60%] xl:w-[40%] 2xl:w-[30%] lg:border-[1px] lg:border-gray-300 lg:m-8 lg:rounded-lg">
-        <div className="sticky z-10 top-0 left-0 w-full p-2 bg-blue-600 md:bg-white text-white md:text-gray-700 md:border-b-[1px] md:border-gray-300">
+        <div className="sticky h-[8%] sm:h-auto z-10 top-0 left-0 w-full p-2 bg-blue-600 md:bg-white text-white md:text-gray-700 md:border-b-[1px] md:border-gray-300">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
               <div className="flex items-center mr-2">
@@ -58,8 +58,8 @@ export default function Chat() {
          
         </div>
 
-        <div className="p-2 h-full overflow-y-scroll">
-        {[...Array(8)].map((n)=>(
+        <div className="p-2 h-[84%] sm:h-full overflow-y-scroll">
+        {[...Array(4)].map((n)=>(
           <div key={n}>
              <div className='my-3 flex justify-start text-sm '>
             <div className='max-w-[80%] lg:max-w-[60%] ml-2'>
@@ -88,7 +88,7 @@ export default function Chat() {
           </div>
         ))}
         </div>
-        <div className="sticky bottom-0 left-0 w-full p-2 bg-white z-10 border-t-[1px] border-gray-300">
+        <div className="sticky h-[8%] sm:h-auto bottom-0 left-0 w-full p-2 bg-white z-10 border-t-[1px] border-gray-300">
           <form action="" className="w-full">
             <input type="text" className=" input hidden md:block" placeholder='write message' autoFocus/>
             <input onClick={()=>setmsgbox(true)} type="text" className=" input md:hidden" placeholder='write message'/>
