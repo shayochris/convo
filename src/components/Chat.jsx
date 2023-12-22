@@ -16,7 +16,7 @@ export default function Chat() {
     setmsgbox(false);
   }
   return (
-    <div className="w-full h-screen flex">
+    <div className="w-full h-screen flex bg-[#413d3d]">
       <SideNav/>
       {msgbox &&
       <div className="md:hidden fixed top-0 left-0 w-full h-full bg-white z-20">
@@ -39,8 +39,8 @@ export default function Chat() {
         </div>
       </div>
       }
-      <div className="main-div lg:shadow-lg lg:w-[60%] xl:w-[40%] 2xl:w-[30%] lg:border-[1px] lg:border-gray-300 lg:m-8 lg:rounded-lg">
-        <div className="sticky h-[8%] sm:h-auto z-10 top-0 left-0 w-full p-2 bg-blue-600 md:bg-white text-white md:text-gray-700 md:border-b-[1px] md:border-gray-300">
+      <div className="main-div h-full overflow-y-scroll scrollbar-hide">
+        <div className="sticky h-[8%] sm:h-auto z-10 top-0 left-0 w-full p-2 bg-[#282828] text-[#FFFFFF] border-b border-[#404040]">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
               <div className="flex items-center mr-2">
@@ -58,13 +58,13 @@ export default function Chat() {
          
         </div>
 
-        <div className="p-2 h-[84%] sm:h-full overflow-y-scroll">
-        {[...Array(4)].map((n)=>(
+        <div className="p-2 h-[84%] sm:h-full bg-[#282828] overflow-y-scroll scrollbar-hide">
+        {[...Array(6)].map((n)=>(
           <div key={n}>
              <div className='my-3 flex justify-start text-sm '>
             <div className='max-w-[80%] lg:max-w-[60%] ml-2'>
-              <div className="relative bg-gray-100 text-gray-700  p-2 rounded-lg">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe a laudantium quasi?</p>
+              <div className="relative bg-[#404040] text-[#FFFFFF]  p-2 rounded-lg">
+                <p>Lorem ipsum </p>
               </div>
               <div className='flex items-center text-gray-500'>
                 <p className='text-xs'>21:35</p>
@@ -75,8 +75,8 @@ export default function Chat() {
              </div>
              <div className='my-3 flex justify-end text-sm '>
                   <div className='max-w-[80%] lg:max-w-[60%] ml-2'>
-                    <div className="relative bg-blue-500 text-white  p-2 rounded-lg">
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe a laudantium quasi?</p>
+                    <div className="relative bg-[#1DB954] text-white  p-2 rounded-lg">
+                      <p>Lorem ipsum dolor</p>
                     </div>
                     <div className='flex items-center text-gray-500'>
                       <p className='text-xs'>21:35</p>
@@ -88,13 +88,14 @@ export default function Chat() {
           </div>
         ))}
         </div>
-        <div className="sticky h-[8%] sm:h-auto bottom-0 left-0 w-full p-2 bg-white z-10 border-t-[1px] border-gray-300">
+        <div className="sticky h-[8%] sm:h-auto bottom-0 left-0 w-full p-2 bg-[#282828] z-10 border-t-[1px] border-[#404040] text-[#FFFFFF]">
           <form action="" className="w-full">
-            <input type="text" className=" input hidden md:block" placeholder='write message' autoFocus/>
-            <input onClick={()=>setmsgbox(true)} type="text" className=" input md:hidden" placeholder='write message'/>
+            <input type="text" className=" input hidden md:block bg-[#282828]" placeholder='write message' autoFocus/>
+            <input onClick={()=>setmsgbox(true)} type="text" className=" input md:hidden bg-[#282828]" placeholder='write message'/>
           </form>
         </div>
       </div>
+      <SideNav/>
     </div>
   )
 }
