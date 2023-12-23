@@ -1,16 +1,18 @@
 import {BsChatSquareTextFill} from "react-icons/bs";
 import {AiFillSetting,AiOutlineMenu,AiOutlineSearch} from "react-icons/ai";
 import {HiUsers} from "react-icons/hi";
-import {MdLogout} from 'react-icons/md';
+import {MdDarkMode, MdLightMode, MdLogout} from 'react-icons/md';
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import bgimage from "../../assets/images/bgimage.jpg";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 export default function MobileNav({ setsearchmodal }) {
     const [mobilenav,setmobilenav]=useState(false);
+    const {theme,ui,border,isLight,setTheme} = useContext(ThemeContext);
   return (
-    <div className='bg-[#282828] px-4 py-2 flex justify-between items-center 
-    md:hidden border-b-[1px] border-[#404040] sticky top-0 left-0 text-white'>
+    <div className={`${theme} px-4 py-2 flex justify-between items-center 
+    md:hidden border-b-[1px] ${border} sticky top-0 left-0`}>
         <p className='text-[#1DB954] font-semibold text-2xl'>convo</p>
         <div className="flex items-center">
             <AiOutlineSearch onClick={()=>setsearchmodal(true)} className='w-6 h-6 mr-2'/>
@@ -18,9 +20,9 @@ export default function MobileNav({ setsearchmodal }) {
         </div>
         {mobilenav && 
         <div  className="fixed w-full h-screen top-0 left-0 z-20 flex">
-            <div className="bg-[#3D3D3D] w-[60%] h-full">
+            <div className={`${theme} w-[60%] h-full`}>
                 <div className="">
-                    <div className="w-full bg-[#404040] text-white p-4 ">
+                    <div className={`w-full ${ui} p-4`}>
                         <div className="w-12 h-12 avatar">
                             <img src={bgimage} alt="" className="avatar-img" />
                         </div>
@@ -38,6 +40,11 @@ export default function MobileNav({ setsearchmodal }) {
                         </li>
                         <li>
                             <Link className="navlink"><HiUsers className='mr-2 w-5 h-5'/>Contacts</Link>
+                        </li>
+                        <li>
+                            {isLight ?
+                            <button onClick={()=>setTheme("dark")} className="navlink"><MdDarkMode className='mr-2 w-5 h-5'/>Dark mode</button> :
+                            <button onClick={()=>setTheme("light")} className="navlink"><MdLightMode className='mr-2 w-5 h-5'/>Light mode</button>}
                         </li>
                         <li>
                             <Link to="/signin" className="navlink"><MdLogout className='mr-2 w-5 h-5'/>Logout</Link>

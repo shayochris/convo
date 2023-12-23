@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 .input{
-  @apply outline-none border-[1px] border-[#404040] py-2 px-4 text-sm w-full rounded-md
+  @apply outline-none border-[1px] py-2 px-4 text-sm w-full rounded-md
 }
 .button{
   @apply px-4 py-2 text-white rounded-lg
 }
 .sidenav{
-  @apply hidden sm:block sm:w-[30%] bg-[#383737] text-[#FFFFFF] h-full
+  @apply hidden sm:block sm:w-[30%]  h-full
 }
 .main-div{
   @apply w-full sm:w-[60%]  overflow-y-scroll scrollbar-hide relative
@@ -29,8 +29,9 @@
   @apply  w-full h-full object-cover bg-center
 }
 .dashboard-nav{
-  @apply hidden md:flex justify-between items-center p-2 border-b-[1px] border-[#404040] left-0 top-0 w-full z-10 bg-[#282828] sticky
+  @apply hidden md:flex justify-between items-center p-2 border-b-[1px]  left-0 top-0 w-full z-10 sticky
 }
 .search{
-  @apply outline-none bg-[#282828] rounded-lg px-2 py-1 text-sm border-[1px] border-[#404040]
+  @apply outline-none rounded-lg px-2 py-1 text-sm border-[1px] 
+  
 }

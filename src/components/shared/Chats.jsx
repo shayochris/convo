@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import bgimage from "../../assets/images/bgimage.jpg";
+import { useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeContext";
 export default function Chats() {
+    const {theme,ui} = useContext(ThemeContext);
   return (
-    <div className='p-4 bg-[#282828]'>
+    <div className={`${theme} p-4`}>
     {[...Array(20)].map((n,i)=>(
-         <div key={i} className='p-2 text-white bg-[#404040] my-2 rounded-lg'>
+         <div key={i} className={`p-2 ${ui} my-2 rounded-lg`}>
             <Link to="/chat/1">
             <div className="flex">
                 <div className=''>

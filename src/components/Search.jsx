@@ -1,6 +1,8 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { ThemeContext } from "../contexts/ThemeContext";
 
 export default function Search({ setsearchmodal }) {
+    const {theme,border} = useContext(ThemeContext)
     const [term,setTerm]=useState("");
     const [result,setResult]=useState(false);
     const handleSubmit=(e)=>{
@@ -9,12 +11,12 @@ export default function Search({ setsearchmodal }) {
   return (
     <div className='fixed top-0 left-0 w-full h-screen bg-black/60 flex justify-center z-20'>
         <div 
-        className="w-full md:w-[40%] lg:w-[40%] mx-auto md:border-[1px] bg-[#282828]
-        md:border-[#404040] h-full md:max-h-[500px] md:mt-4 md:rounded-lg md:shadow-lg overflow-y-scroll scrollbar-hide">
-            <div className="flex border-b-[1px] border-[#404040] p-2 sticky top-0 left-0 bg-[#282828]">
-                <button className="text-white" onClick={()=>setsearchmodal(false)}>back</button>
+        className={`w-full md:w-[40%] lg:w-[40%] mx-auto md:border-[1px] ${theme} ${border}
+        h-full md:max-h-[500px] md:mt-4 md:rounded-lg md:shadow-lg overflow-y-scroll scrollbar-hide`}>
+            <div className={`flex border-b-[1px] ${theme} ${border} p-2 sticky top-0 left-0`}>
+                <button className="" onClick={()=>setsearchmodal(false)}>back</button>
                 <form action="" onSubmit={handleSubmit} className="ml-4 w-full flex justify-between items-center">
-                    <input type="text" className="search w-full text-white bg-[#282828] " placeholder="search" autoFocus 
+                    <input type="text" className={`search w-full ${theme} ${border}`} placeholder="search" autoFocus 
                     value={term} onChange={(e)=>setTerm(e.target.value)}
                     />
                     {term&&
@@ -24,7 +26,7 @@ export default function Search({ setsearchmodal }) {
             </div>
             <div className="mt-2">
             {result && [1,2,3,4,5].map((n)=>(
-                     <div key={n} className='text-white p-2'>
+                     <div key={n} className=' p-2'>
                         <div className="flex">
                             <div className=''>
                                 <div className="w-12 h-12 avatar"></div>
