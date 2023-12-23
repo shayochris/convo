@@ -6,8 +6,8 @@ export const ThemeProvider = ({ children }) => {
         const localData = localStorage.getItem("light")
         return localData ? JSON.parse(localData) : false
     })
-    const theme = isLight ? "bg-[#FFFFFF] text-black " : "bg-[#181818] text-[#FFFFFF]"
-    const ui = isLight ? "bg-[#eee]" : "bg-[#282828]"
+    const theme = isLight ? "bg-[#FFFFFF] text-black " : "bg-[#121212] text-[#FFFFFF]"
+    const ui = isLight ? "bg-[#eee]" : "bg-[#181818]"
     const border = isLight ? "border-[#ddd]" : "border-[#404040]"
   
     const setTheme = (data) =>{

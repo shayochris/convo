@@ -65,7 +65,7 @@ export default function Chat() {
           <div key={n}>
              <div className='my-3 flex justify-start text-sm '>
             <div className='max-w-[80%] lg:max-w-[60%] ml-2'>
-              <div className={`relative ${ui} p-2 rounded-lg`}>
+              <div className={`relative bg-[#282828] p-2 rounded-lg`}>
                 <p>Lorem ipsum </p>
               </div>
               <div className='flex items-center text-gray-500'>
