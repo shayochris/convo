@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../contexts/ThemeContext";
 export default function Signin() {
+    const {theme,border,ui,isLight} = useContext(ThemeContext);
     const [username,setusername]=useState("");
     const [password,setpassword]=useState("");
     const [usernameerror,setusernameerror]=useState(false);
@@ -32,16 +34,15 @@ export default function Signin() {
         
     }
   return (
-    <div className="fixed top-0 left-0 w-full h-full  bg-no-repeat bg-cover">
+    <div className={`${theme} fixed top-0 left-0 w-full h-full  bg-no-repeat bg-cover`}>
         <div className="w-full">
-            <form action="" className="w-[80%] lg:w-[30%] mx-auto bg-white p-4 rounded-lg mt-12" onSubmit={handleSubmit} >
-                <h2 className="text-xl font-semibold text-blue-700">Convo</h2>
+            <form action="" className="w-[80%] lg:w-[30%] mx-auto p-4 rounded-lg mt-12" onSubmit={handleSubmit} >
+                <h2 className="text-xl font-semibold text-green-500">Convo</h2>
                 <div className="my-3">
-                    <div className="relative">
-                        <input type="text"  className={`block rounded-lg px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900   border-[2px] ${username_status} appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer`} placeholder=" "
-                        value={username} onChange={(e)=>setusername(e.target.value)} required
-                        />
-                        <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">username</label>
+                    <div className="">
+                       <input type="text" className={`w-full outline-none border ${border} ${theme} p-2 rounded-lg `} placeholder="username" 
+                       />
+                       
                     </div>
                     {usernameerror && 
                         <p className="text-xs text-red-500">**{msg}</p>
@@ -49,10 +50,8 @@ export default function Signin() {
                 </div>
                 <div className="my-3">
                     <div className="relative">
-                        <input type="password"  className={`block rounded-lg px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900   border-[2px] ${password_status} appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer`} placeholder=" "
-                        value={password} onChange={(e)=>setpassword(e.target.value)} required
-                        />
-                        <label className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">password</label>
+                       <input type="text" className={`w-full outline-none border ${border} ${theme} p-2 rounded-lg `} placeholder="password" 
+                       />
                     </div>
                     {passworderror && 
                         <p className="text-xs text-red-500">**{msg}</p>
@@ -63,19 +62,15 @@ export default function Signin() {
                 </div>
                 {username && password ?
                     <div className="my-3">
-                         <button className="button w-full bg-blue-700">sign in</button>
+                         <button className="button w-full bg-green-500">sign in</button>
                      </div> :
                      <div className="my-3">
-                        <button className="button w-full bg-blue-500/40" disabled>sign in</button>
+                        <button className={`button w-full ${isLight ? "bg-[#eee] text-[#333]": "bg-green-500"}`} disabled>
+                            sign indfhdh</button>
                     </div>
                 }
                
-                <fieldset className=" border-t-2 border-gray-200 text-center">
-                    <legend className="p-2">OR</legend>
-                </fieldset>
-                <div className="my-3">
-                    <Link to="/signup" className="button bg-green-500 w-full block text-center text-sm">Sign Up</Link>
-                </div>
+              
             </form>
         </div>
         

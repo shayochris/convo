@@ -9,7 +9,7 @@ import { useContext } from 'react';
 export default function SideNav() {
     const {isLight,setTheme,theme,border} = useContext(ThemeContext);
   return (
-    <div className={`sidenav ${theme}`}>
+    <div className={`sidenav ${theme} border-r ${border}`}>
         <div className="w-full p-4">
             <div className="w-16 h-16 avatar">
                 <img src={bgimage} alt="" className="avatar-img" />
